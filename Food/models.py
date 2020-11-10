@@ -9,7 +9,7 @@ class Customer(models.Model):
 	contact=models.CharField(max_length=20,null=True)
 
 	def __str__(self):
-    	return self.customer
+		return self.name
 
 class Meals(models.Model):
 	food_id=models.IntegerField(primary_key=True)
