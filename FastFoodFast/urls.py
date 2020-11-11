@@ -15,7 +15,12 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+# from rest_framework.authtoken.views import obtain_auth_token
+from Food import views
+# from rest_framework.urlpatterns import format_suffex_patterns
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('CurrentOrders', views.CurrentOrders.as_view()),
+
 ]
