@@ -1,7 +1,7 @@
 from rest_framework import generics, permissions, mixins
 from rest_framework.response import Response
 from .serializers import RegisterSerializer, UserSerializer,ProfileSerializer
-from django.contrib.auth.models import AbstractBaseUser
+from django.contrib.auth.models import AbstractBaseUser,BaseUserManager
 from .models import Profile,User
 
 #Register API
