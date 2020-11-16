@@ -4,7 +4,7 @@ from django.db.models.signals import post_save
 from django.dispatch import receiver
 
 class UserManager(BaseUserManager):
-    def create_user(self, email, password=None, is_staff=False, is_admin=False, is_active=True):
+    def create_user(self, email, first_name, last_name, roles, password=None, is_staff=False, is_admin=False, is_active=True):
         if not email:
             raise ValueError('Users must have an email address')
         if not password:
@@ -12,6 +12,9 @@ class UserManager(BaseUserManager):
 
         user_obj = self.model(
             email = self.normalize_email(email),
+            first_name = first_name,
+            last_name = last_name,
+            roles = roles
            
         )
         user_obj.set_password(password)
@@ -24,8 +27,6 @@ class UserManager(BaseUserManager):
     def create_staffuser(self, email, password=None):
         user = self.create_user(
             email,
-           
-            roles,
             password=password,
             is_staff=True
         )
@@ -47,6 +48,8 @@ class User(AbstractBaseUser):
         ('CS', 'CUSTOMER')
     )
     email = models.EmailField(max_length=255,unique=True)
+    first_name = models.CharField(max_length=255, null=True)
+    last_name = models.CharField(max_length=255, null=True)
     active = models.BooleanField(default=True)
     staff = models.BooleanField(default=False)
     admin = models.BooleanField(default=False)
