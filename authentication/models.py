@@ -4,7 +4,7 @@ from django.db.models.signals import post_save
 from django.dispatch import receiver
 
 class UserManager(BaseUserManager):
-    def create_user(self, email, first_name, last_name, roles, password=None, is_staff=False, is_admin=False, is_active=True):
+    def create_user(self, email, password=None, is_staff=False, is_admin=False, is_active=True):
         if not email:
             raise ValueError('Users must have an email address')
         if not password:
@@ -12,9 +12,7 @@ class UserManager(BaseUserManager):
 
         user_obj = self.model(
             email = self.normalize_email(email),
-            first_name = first_name,
-            last_name = last_name,
-            roles = roles
+           
         )
         user_obj.set_password(password)
         user_obj.staff = is_staff
@@ -23,23 +21,20 @@ class UserManager(BaseUserManager):
         user_obj.save(using=self._db)
         return user_obj
 
-    def create_staffuser(self, email, first_name, roles, last_name, password=None):
+    def create_staffuser(self, email, password=None):
         user = self.create_user(
             email,
-            first_name,
-            last_name,
+           
             roles,
             password=password,
             is_staff=True
         )
         return user
 
-    def create_superuser(self, email, username, first_name, last_name, password=None):
+    def create_superuser(self, email, password=None):
         user = self.create_user(
             email,
-            first_name,
-            last_name,
-            roles,
+    
             password=password,
             is_staff=True,
             is_admin=True
@@ -52,8 +47,6 @@ class User(AbstractBaseUser):
         ('CS', 'CUSTOMER')
     )
     email = models.EmailField(max_length=255,unique=True)
-    first_name = models.CharField(max_length=255, blank=True, null=True)
-    last_name = models.CharField(max_length=255, blank=True, null=True)
     active = models.BooleanField(default=True)
     staff = models.BooleanField(default=False)
     admin = models.BooleanField(default=False)
@@ -61,7 +54,8 @@ class User(AbstractBaseUser):
         choices = USER_ROLES, default='CS', max_length=255
     )
     USERNAME_FIELD = 'email'
-    REQUIRED_FIELDS = ['first_name', 'last_name']
+    
+    REQUIRED_FIELDS = []
 
     objects = UserManager()
 
