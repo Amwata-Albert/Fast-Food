@@ -29,7 +29,11 @@ end
 # unset irrelevant variables
 deactivate nondestructive
 
+<<<<<<< HEAD
 set -gx VIRTUAL_ENV "/home/moringa/Desktop/Fast-Food/virtual"
+=======
+set -gx VIRTUAL_ENV "/home/moringa/Desktop/django/prodev/FastFoodFast/virtual"
+>>>>>>> 055822a2c06e5d63d05911cb15d615bba85508e9
 
 set -gx _OLD_VIRTUAL_PATH $PATH
 set -gx PATH "$VIRTUAL_ENV/bin" $PATH
@@ -52,7 +56,11 @@ if test -z "$VIRTUAL_ENV_DISABLE_PROMPT"
         set -l old_status $status
 
         # Prompt override?
+<<<<<<< HEAD
         if test -n "(virtual) "            
+=======
+        if test -n "(virtual) "
+>>>>>>> 055822a2c06e5d63d05911cb15d615bba85508e9
             printf "%s%s" "(virtual) " (set_color normal)
         else
             # ...Otherwise, prepend env

@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 #!/home/moringa/Desktop/Fast-Food/virtual/bin/python
+=======
+#!/home/moringa/Desktop/django/prodev/FastFoodFast/virtual/bin/python
+>>>>>>> 055822a2c06e5d63d05911cb15d615bba85508e9
 # When the django-admin.py deprecation ends, remove this script.
 import warnings
 

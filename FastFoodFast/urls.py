@@ -15,15 +15,13 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-# from rest_framework.authtoken.views import obtain_auth_token
 from Food import views
-# from rest_framework.urlpatterns import format_suffex_patterns
+from rest_framework_simplejwt import views as jwt_views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    # path('', include(accounts.urls)),
-    path('' ,include('accounts.urls')),
-    # path('', include('todolist.urls')),
+    path('',include('Food.urls')),
+    path('api/token/', jwt_views.TokenObtainPairView.as_view(), name='token_obtain_pair'),
+    path('api/token/refresh/', jwt_views.TokenRefreshView.as_view(), name='token_refresh'),
     path('CurrentOrders', views.CurrentOrders.as_view()),
-
 ]
