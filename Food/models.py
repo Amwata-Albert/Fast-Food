@@ -1,9 +1,9 @@
 from django.db import models
 
-<<<<<<< HEAD
+
 
 # Create your models here.
-=======
+
 # Models
 class Customer(models.Model):
 	user_id=models.IntegerField(primary_key=True)
@@ -14,7 +14,7 @@ class Customer(models.Model):
 
 	def __str__(self):
 		return self.name
->>>>>>> a0a3a53844208a7fcf06d0d45b96a62bbe87b56a
+
 
 class Meals(models.Model):
 	food_id=models.IntegerField(primary_key=True)
@@ -26,13 +26,13 @@ class Meals(models.Model):
 	def __str__(self):
 		return self.meals
 
-<<<<<<< HEAD
+
 class Hero(models.Model):
     name = models.CharField(max_length=60)
     alias = models.CharField(max_length=60)
     def __str__(self):
         return self.name        
-=======
+
 class CurrentOrders(models.Model):
 	food=models.ForeignKey(Meals,null=True,on_delete=models.PROTECT)
 	quantity=models.IntegerField(null=True)
@@ -54,5 +54,8 @@ class OrderHistory(models.Model):
 	user=models.ForeignKey(Customer,null=True,on_delete=models.CASCADE)
 	status=models.CharField(max_length=20,null=True)
 	order_timestamp=models.DateTimeField(null=True)
+
 	amount=models.IntegerField(null=True)
->>>>>>> a0a3a53844208a7fcf06d0d45b96a62bbe87b56a
+
+	amount=models.IntegerField(null=True)
+
