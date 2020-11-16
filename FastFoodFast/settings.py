@@ -38,10 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'Food.apps.FoodConfig',
-<<<<<<< HEAD
-=======
     'authentication.apps.AuthenticationConfig',
->>>>>>> a0a3a53844208a7fcf06d0d45b96a62bbe87b56a
     'rest_framework',
 ]
 
@@ -84,7 +81,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'food',
         'USER': 'moringa',
-    'PASSWORD':'nyururu',
+    'PASSWORD':'Access',
     }
 }
 
