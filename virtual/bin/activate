@@ -28,11 +28,7 @@ deactivate () {
     fi
 
     unset VIRTUAL_ENV
-<<<<<<< HEAD
     if [ ! "$1" = "nondestructive" ] ; then
-=======
-    if [ ! "${1:-}" = "nondestructive" ] ; then
->>>>>>> 055822a2c06e5d63d05911cb15d615bba85508e9
     # Self destruct!
         unset -f deactivate
     fi
@@ -41,11 +37,7 @@ deactivate () {
 # unset irrelevant variables
 deactivate nondestructive
 
-<<<<<<< HEAD
 VIRTUAL_ENV="/home/moringa/Desktop/Fast-Food/virtual"
-=======
-VIRTUAL_ENV="/home/moringa/Desktop/django/prodev/FastFoodFast/virtual"
->>>>>>> 055822a2c06e5d63d05911cb15d615bba85508e9
 export VIRTUAL_ENV
 
 _OLD_VIRTUAL_PATH="$PATH"
