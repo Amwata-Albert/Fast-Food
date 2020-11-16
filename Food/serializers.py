@@ -6,3 +6,5 @@ class CurrentOrdersSerializer(serializers.ModelSerializer):
         model = CurrentOrders
         fields = ('food', 'status', 'amount' , 'address')
         # fields = ('__all__')
+
+      
