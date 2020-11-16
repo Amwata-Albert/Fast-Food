@@ -38,7 +38,6 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'Food.apps.FoodConfig',
-    'authentication',
     'authentication.apps.AuthenticationConfig',
     'rest_framework',
 ]
@@ -85,7 +84,7 @@ DATABASES = {
         'NAME': 'food',
         'USER': 'moringa',
         'PASSWORD':'Access',
-        'PASSWORD':'nyururu',
+    
     }
 }
 
