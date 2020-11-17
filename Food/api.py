@@ -3,7 +3,7 @@ from rest_framework import generics,permissions
 
 
 from .serializers import Mealserializer
-from .models import Meals
+from .models import Meals,CurrentOrders
 
 class MealsApi(generics.ListCreateAPIView):
 
