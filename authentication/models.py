@@ -4,7 +4,7 @@ from django.db.models.signals import post_save
 from django.dispatch import receiver
 
 class UserManager(BaseUserManager):
-    def create_user(self, email, first_name, last_name, roles, password=None, is_staff=False, is_admin=False, is_active=True):
+    def create_user(self, email, first_name, last_name, password=None, is_staff=False, is_admin=False, is_active=True):
         if not email:
             raise ValueError('Users must have an email address')
         if not password:
@@ -14,7 +14,6 @@ class UserManager(BaseUserManager):
             email = self.normalize_email(email),
             first_name = first_name,
             last_name = last_name,
-            roles = roles
            
         )
         user_obj.set_password(password)
