@@ -3,7 +3,7 @@ from rest_framework import generics,permissions
 from .serializers import Mealserializer,CustomerSerializer
 from .models import Meals,Customer
 
-class MealsApi(generics.ListCreateAPIView):
+class mealsApi(generics.ListCreateAPIView):
 
     queryset=Meals.objects.all()
     serializer_class=Mealserializer
