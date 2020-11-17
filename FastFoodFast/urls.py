@@ -16,7 +16,12 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path,include
 from rest_framework_simplejwt import views as jwt_views
+from rest_framework import routers
+from Food.views import views
 #from .api import MealsApi
+
+router = routers.DefaultRouter()
+router.register(r'meals', views.MealViewSet)
 
 urlpatterns = [
     path('admin/', admin.site.urls),

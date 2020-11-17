@@ -13,5 +13,4 @@ class MealViewSet(viewsets.ModelViewSet):
     
 
 
-router = routers.DefaultRouter()
-router.register(r'meals', views.MealViewSet)
+
