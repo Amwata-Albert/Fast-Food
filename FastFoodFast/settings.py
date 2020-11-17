@@ -31,7 +31,6 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    'knox',
     'rest_framework',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -133,7 +132,6 @@ REST_FRAMEWORK = {
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': [
         'rest_framework_simplejwt.authentication.JWTAuthentication',
-        'knox.auth.TokenAuthentication',
     ]
 }
 

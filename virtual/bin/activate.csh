@@ -8,11 +8,7 @@ alias deactivate 'test $?_OLD_VIRTUAL_PATH != 0 && setenv PATH "$_OLD_VIRTUAL_PA
 # Unset irrelevant variables.
 deactivate nondestructive
 
-<<<<<<< HEAD
 setenv VIRTUAL_ENV "/home/moringa/Desktop/Fast-Food/virtual"
-=======
-setenv VIRTUAL_ENV "/home/moringa/Desktop/django/prodev/FastFoodFast/virtual"
->>>>>>> 055822a2c06e5d63d05911cb15d615bba85508e9
 
 set _OLD_VIRTUAL_PATH="$PATH"
 setenv PATH "$VIRTUAL_ENV/bin:$PATH"
