@@ -38,7 +38,6 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'Food.apps.FoodConfig',
-    'rest_framework',
     'authentication',
     'rest_framework',
     'corsheaders',
