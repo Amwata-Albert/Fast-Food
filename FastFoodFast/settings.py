@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'Food.apps.FoodConfig',
     'authentication.apps.AuthenticationConfig',
     'rest_framework',
+    'corsheaders',
 ]
 
 AUTH_USER_MODEL = 'authentication.User' 
@@ -52,6 +53,18 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
+    'django.middleware.common.CommonMiddleware',
+]
+
+CORS_ORIGIN_ALLOW_ALL = True # If this is used then `CORS_ORIGIN_WHITELIST` will not have any effect
+CORS_ALLOW_CREDENTIALS = True
+CORS_ORIGIN_WHITELIST = [
+    'http://localhost:4200',
+]
+
+CORS_ORIGIN_REGEX_WHITELIST = [
+    'http://localhost:4200',
 ]
 
 ROOT_URLCONF = 'FastFoodFast.urls'
