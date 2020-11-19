@@ -83,3 +83,6 @@ venv.bak/
 /site
 # mypy
 .mypy_cache/
+**/migrations/
+**/**/migrations
+

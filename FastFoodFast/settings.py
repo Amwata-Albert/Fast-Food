@@ -96,7 +96,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'food',
         'USER': 'moringa',
-    'PASSWORD':'nyururu',
+    'PASSWORD':'Access',
     }
 }
 
