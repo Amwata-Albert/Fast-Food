@@ -26,6 +26,8 @@ router.register(r'meals', views.MealViewSet)
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',include('Food.urls')),
+    path('',include('authentication.urls')),
+    path('',include('order.urls')),
     path('api/token/', jwt_views.TokenObtainPairView.as_view(), name='token_obtain_pair'),
     path('api/token/refresh/', jwt_views.TokenRefreshView.as_view(), name='token_refresh'),
 ]
