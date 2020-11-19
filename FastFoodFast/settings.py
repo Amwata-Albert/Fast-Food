@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'authentication.apps.AuthenticationConfig',
     'rest_framework',
     'corsheaders',
+    'cloudinary'
 ]
 
 AUTH_USER_MODEL = 'authentication.User' 
@@ -145,3 +146,9 @@ REST_FRAMEWORK = {
         'rest_framework_simplejwt.authentication.JWTAuthentication',
     ],
 }
+
+cloudinary.config( 
+  cloud_name = "dbimqqc95", 
+  api_key = "943634494677324", 
+  api_secret = "0kkHXq36LVrsG22tZDr0bbI5peo",
+)
