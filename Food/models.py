@@ -1,4 +1,8 @@
 from django.db import models
+import cloudinary
+import cloudinary.uploader
+import cloudinary.api
+from cloudinary.models import CloudinaryField
 
 # Models
 class Customer(models.Model):
