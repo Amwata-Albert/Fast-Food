@@ -31,6 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'order',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -38,9 +39,10 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'Food.apps.FoodConfig',
-    'authentication',
+    'authentication.apps.AuthenticationConfig',
     'rest_framework',
     'corsheaders',
+    'cloudinary'
 ]
 
 AUTH_USER_MODEL = 'authentication.User' 
@@ -96,7 +98,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'food',
         'USER': 'moringa',
-    'PASSWORD':'nyururu',
+        'PASSWORD':'Access',
     }
 }
 
@@ -144,3 +146,9 @@ REST_FRAMEWORK = {
         'rest_framework_simplejwt.authentication.JWTAuthentication',
     ],
 }
+
+cloudinary.config( 
+  cloud_name = "dbimqqc95", 
+  api_key = "943634494677324", 
+  api_secret = "0kkHXq36LVrsG22tZDr0bbI5peo",
+)
