@@ -18,3 +18,12 @@ class OrderHistorySerializer(serializers.ModelSerializer):
         model = OrderHistory
         fields = '__all__' 
 
+class CurrentOrdersSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = CurrentOrders
+        fields = '__all__' 
+
+class OrderHistorySerializer(serializers.ModelSerializer):
+    class Meta:
+        model = OrderHistory
+        fields = '__all__' 
