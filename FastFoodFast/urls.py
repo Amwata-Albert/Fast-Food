@@ -25,6 +25,7 @@ router.register(r'meals', views.MealViewSet)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('',include('authentication.urls')),
     path('',include('Food.urls')),
     path('',include('authentication.urls')),
     path('',include('order.urls')),

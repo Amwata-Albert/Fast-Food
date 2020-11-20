@@ -1,7 +1,4 @@
 from django.db import models
-import cloudinary
-import cloudinary.uploader
-import cloudinary.api
 from cloudinary.models import CloudinaryField
 
 # Models
@@ -19,11 +16,11 @@ class Meals(models.Model):
 	food_id=models.IntegerField(primary_key=True)
 	name=models.CharField(max_length=50,null=True)
 	price=models.IntegerField(null=True)
-	photo=models.ImageField(upload_to='meals/', default='No image')
+	photo=CloudinaryField('image')
 	category=models.CharField(max_length=20,null=True)
 
 	def __str__(self):
-		return self.meals
+		return self.name
 
 class Hero(models.Model):
     name = models.CharField(max_length=60)
