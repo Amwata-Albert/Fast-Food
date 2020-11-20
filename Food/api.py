@@ -1,10 +1,19 @@
 from rest_framework.response import Response
 from rest_framework import generics,permissions
+from .serializers import Mealserializer,CustomerSerializer
+from .models import Meals,Customer
 
-from .serializers import CustomerSerializer
-from .models import Customer
+class mealsApi(generics.ListCreateAPIView):
+
+    queryset=Meals.objects.all()
+    serializer_class=Mealserializer
 
 class CustomerApi(generics.ListCreateAPIView):
     
     queryset = Customer.objects.all()
     serializer_class = CustomerSerializer
+
+class CustomerDetailApi(generics.RetrieveUpdateDestroyAPIView):
+    queryset = Customer.objects.all()
+    serializer_class = CustomerSerializer
+

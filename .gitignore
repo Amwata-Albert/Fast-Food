@@ -1,3 +1,4 @@
+**/migrations/*
 virtual/
 ./start.sh
 __pycache__/
@@ -83,9 +84,3 @@ venv.bak/
 /site
 # mypy
 .mypy_cache/
-# **/migrations/
-# **/**/migrations
-**/migrations/
-**/**/migrations
-
-
