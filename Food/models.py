@@ -50,3 +50,7 @@ class OrderHistory(models.Model):
 	status=models.CharField(max_length=20,null=True)
 	order_timestamp=models.DateTimeField(null=True)
 	amount=models.IntegerField(null=True)
+
+
+	def __str__(self):
+		return self.status
