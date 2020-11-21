@@ -15,6 +15,8 @@ class MealViewSet(viewsets.ModelViewSet):
 
     # drrrd
 
+    # drrrd
+
 # class CurrentOrders(APIView):
 #     def get(self, request, format=None):
 #         all_CurrentOrder = CurrentOrder.objects.all()
