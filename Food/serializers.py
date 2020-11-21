@@ -13,9 +13,17 @@ class CustomerSerializer(serializers.ModelSerializer):
         fields = '__all__' 
 
 
-
-class CustomerSerializer(serializers.ModelSerializer):
+class OrderHistorySerializer(serializers.ModelSerializer):
     class Meta:
-        model = Customer
+        model = OrderHistory
         fields = '__all__' 
 
+class CurrentOrdersSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = CurrentOrders
+        fields = '__all__' 
+
+class OrderHistorySerializer(serializers.ModelSerializer):
+    class Meta:
+        model = OrderHistory
+        fields = '__all__' 
