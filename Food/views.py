@@ -1,9 +1,19 @@
-# from rest_framework.response import Response
-# from rest_framework.views import APIView
-# from rest_framework import serializers
-# from .models import CurrentOrders
-# from rest_framework import status
-# from .serializer import CurrentOrdersSerializer
+from django.shortcuts import render
+from rest_framework import viewsets,routers
+from rest_framework.permissions import IsAdminUser
+from .serializers import Mealserializer
+from .models import Meals
+from . import views
+
+# Create your views here.
+class MealViewSet(viewsets.ModelViewSet):
+    queryset = Meals.objects.all().order_by('name')
+    serializer_class = Mealserializer
+    permission_classes=[IsAdminUser]
+
+    
+
+    # drrrd
 
     # drrrd
 

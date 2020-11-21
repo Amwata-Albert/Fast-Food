@@ -43,9 +43,9 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'Food.apps.FoodConfig',
     'authentication.apps.AuthenticationConfig',
-    'rest_framework',
+    'rest_framework', 
     'corsheaders',
-    'cloudinary'
+
 ]
 
 AUTH_USER_MODEL = 'authentication.User' 
