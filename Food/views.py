@@ -5,6 +5,8 @@
 # from rest_framework import status
 # from .serializer import CurrentOrdersSerializer
 
+    # drrrd
+
 # class CurrentOrders(APIView):
 #     def get(self, request, format=None):
 #         all_CurrentOrder = CurrentOrder.objects.all()
