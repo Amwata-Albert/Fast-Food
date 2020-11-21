@@ -16,7 +16,7 @@ class Meals(models.Model):
 	food_id=models.IntegerField(primary_key=True)
 	name=models.CharField(max_length=50,null=True)
 	price=models.IntegerField(null=True)
-	photo=CloudinaryField('image')
+	photo=models.ImageField()
 	category=models.CharField(max_length=20,null=True)
 
 	def __str__(self):
@@ -50,3 +50,7 @@ class OrderHistory(models.Model):
 	status=models.CharField(max_length=20,null=True)
 	order_timestamp=models.DateTimeField(null=True)
 	amount=models.IntegerField(null=True)
+
+
+	def __str__(self):
+		return self.status
