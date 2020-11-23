@@ -32,7 +32,7 @@ class CurrentOrders(models.Model):
 
 	options = (
 		('0', 'Recieved'),
-		('1', 'On Delivery'),
+		('1', 'Cancelled'),
 		('2', 'Pending'),
 		('3', 'Completed')
 	)
