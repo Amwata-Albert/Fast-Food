@@ -29,11 +29,21 @@ class Hero(models.Model):
         return self.name        
 
 class CurrentOrders(models.Model):
+
+	options = (
+		('0', 'Recieved'),
+		('1', 'On Delivery'),
+		('2', 'Pending'),
+		('3', 'Completed')
+	)
+
 	food=models.ForeignKey(Meals,null=True,on_delete=models.PROTECT)
 	quantity=models.IntegerField(null=True)
 	order_id=models.IntegerField(primary_key=True)
 	user=models.ForeignKey(Customer,null=True,on_delete=models.PROTECT)
-	status=models.CharField(max_length=20,null=True)
+	status=models.CharField(
+		choices = options, default= '0', max_length=255
+	)
 	order_timestamp=models.DateTimeField(null=True)
 	amount=models.IntegerField(null=True)
 	address=models.TextField(null=True)
@@ -43,11 +53,19 @@ class CurrentOrders(models.Model):
 		self.save()
 
 class OrderHistory(models.Model):
+
+	options = (
+		('0', 'Completed'),
+		('1', 'Cancelled')
+	)
+
 	food=models.ForeignKey(Meals,null=True,on_delete=models.PROTECT)
 	quantity=models.IntegerField(null=True)
 	order_id=models.IntegerField(null=True)
 	user=models.ForeignKey(Customer,null=True,on_delete=models.CASCADE)
-	status=models.CharField(max_length=20,null=True)
+	status=models.CharField(
+		choices= options, default= '0', max_length=255
+	)
 	order_timestamp=models.DateTimeField(null=True)
 	amount=models.IntegerField(null=True)
 
