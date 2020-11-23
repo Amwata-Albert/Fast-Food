@@ -1,4 +1,6 @@
- Byte-compiled / optimized / DLL files
+**/migrations/*
+virtual/
+./start.sh
 __pycache__/
 *.py[cod]
 *$py.class
@@ -82,4 +84,4 @@ venv.bak/
 # mkdocs documentation
 /site
 # mypy
-.mypy_cache/
+.mypy_cache/`

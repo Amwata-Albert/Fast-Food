@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 #!/home/moringa/Desktop/Fast-Food/virtual/bin/python
+=======
+#!/home/moringa/Documents/Nyururu/prodev/virtual/bin/python
+>>>>>>> 1503a664b0c61dd6e4482c7b3bfa7cb44f4f5b1b
 # -*- coding: utf-8 -*-
 import re
 import sys
