@@ -7,5 +7,7 @@ admin.site.register(Hero)
 admin.site.register(Customer)
 admin.site.register(Meals)
 admin.site.register(OrderHistory)
+admin.site.register(CurrentOrders)
+
 
 
