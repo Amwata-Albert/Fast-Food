@@ -31,10 +31,10 @@ class Hero(models.Model):
 class CurrentOrders(models.Model):
 
 	options = (
-		('0', 'Recieved'),
-		('1', 'Cancelled'),
-		('2', 'Pending'),
-		('3', 'Completed')
+		('Received', 'Recieved'),
+		('Cancelled', 'Cancelled'),
+		('Pending', 'Pending'),
+		('Completed', 'Completed')
 	)
 
 	food=models.ForeignKey(Meals,null=True,on_delete=models.PROTECT)
@@ -42,7 +42,7 @@ class CurrentOrders(models.Model):
 	order_id=models.IntegerField(primary_key=True)
 	user=models.ForeignKey(Customer,null=True,on_delete=models.PROTECT)
 	status=models.CharField(
-		choices = options, default= '0', max_length=255
+		choices = options, default= 'Received', max_length=255
 	)
 	order_timestamp=models.DateTimeField(null=True)
 	amount=models.IntegerField(null=True)
@@ -55,8 +55,8 @@ class CurrentOrders(models.Model):
 class OrderHistory(models.Model):
 
 	options = (
-		('0', 'Completed'),
-		('1', 'Cancelled')
+		('Completed', 'Completed'),
+		('Cancelled', 'Cancelled')
 	)
 
 	food=models.ForeignKey(Meals,null=True,on_delete=models.PROTECT)
@@ -64,7 +64,7 @@ class OrderHistory(models.Model):
 	order_id=models.IntegerField(null=True)
 	user=models.ForeignKey(Customer,null=True,on_delete=models.CASCADE)
 	status=models.CharField(
-		choices= options, default= '0', max_length=255
+		choices= options, default= 'Completed', max_length=255
 	)
 	order_timestamp=models.DateTimeField(null=True)
 	amount=models.IntegerField(null=True)
